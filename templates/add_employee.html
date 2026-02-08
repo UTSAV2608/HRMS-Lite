@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add Employee</title>
+<style>
+body{font-family:Arial;background:#f4f6f8;margin:40px}
+.card{background:white;padding:20px;border-radius:8px}
+</style>
+</head>
+<body>
+
+<h2>Add Employee</h2>
+
+<div class="card">
+<form method="POST" action="/add">
+ID: <input name="employee_id" required><br><br>
+Name: <input name="full_name" required><br><br>
+Email: <input name="email" required><br><br>
+Department: <input name="department" required><br><br>
+<button type="submit">Add</button>
+</form>
+</div>
+
+<h3>Employees</h3>
+
+{% for emp in employees %}
+<p>
+{{emp.full_name}} ({{emp.department}})
+<a href="/delete/{{emp.employee_id}}">Delete</a>
+</p>
+{% else %}
+<p>No employees</p>
+{% endfor %}
+
+<br>
+<a href="/">Back</a>
+
+</body>
+</html>
