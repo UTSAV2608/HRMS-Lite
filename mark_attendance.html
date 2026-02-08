@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mark Attendance</title>
+</head>
+<body>
+
+<h2>Mark Attendance</h2>
+
+{% for emp in employees %}
+<p>
+{{emp.full_name}}
+<a href="/mark/{{emp.employee_id}}">Mark Present</a>
+<a href="/attendance/{{emp.employee_id}}">View Attendance</a>
+</p>
+{% else %}
+<p>No employees added</p>
+{% endfor %}
+
+<br>
+<a href="/">Back</a>
+
+</body>
+</html>

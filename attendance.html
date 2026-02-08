@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Attendance Records</title>
+</head>
+<body>
+
+<h2>Attendance</h2>
+
+<table border="1" cellpadding="6">
+<tr>
+<th>Date</th>
+<th>Status</th>
+</tr>
+
+{% for r in records %}
+<tr>
+<td>{{r.date}}</td>
+<td>{{r.status}}</td>
+</tr>
+{% else %}
+<tr><td colspan="2">No Records</td></tr>
+{% endfor %}
+
+</table>
+
+<br>
+<a href="/attendance-page">Back</a>
+
+</body>
+</html>
